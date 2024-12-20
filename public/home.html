@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskify</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>Taskify</header>
+        <div class="content">
+            <aside class="sidebar" id="sidebar">
+                <button class="toggle-button" id="collapseButton" onclick="toggleSidebar()">&#9664;</button>
+                <h2>Projects</h2>
+                <ul class="project-list">
+                </ul>
+                <button class="add-button" id="new_project-button" onclick="createProject()">New Project</button>
+            </aside>
+            
+            <div class="main-content hidden" id="mainContent">
+                <div class="title"></div>
+                <hr>
+                <div class="kanban">
+                    <div class="kanban-column" id="todo" ondragover="allowDrop(event)" ondrop="drop(event)">
+                        <h3>Todo</h3>
+                        <ul class="kanban-item-list"></ul>
+                        <button class="add-button" id="new-item-button" onclick="createKanbanItem('todo')">New Item</button>
+
+                    </div>
+                    <div class="kanban-column" id="inProgress" ondragover="allowDrop(event)" ondrop="drop(event)"> 
+                        <h3>In Progress</h3>
+                        <ul class="kanban-item-list"></ul>
+                        <button class="add-button" id="new-item-button" onclick="createKanbanItem('inProgress')">New Item</button>
+                    </div>
+                    <div class="kanban-column" id="completed" ondragover="allowDrop(event)" ondrop="drop(event)">
+                        <h3>Completed</h3>
+                        <ul class="kanban-item-list"></ul>
+                        <button class="add-button" id="new-item-button" onclick="createKanbanItem('completed')">New Item</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="empty-text">Your Projects will be listed here!</div>
+    </div>
+   
+</body>
+</html>
